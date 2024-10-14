@@ -141,11 +141,15 @@
         }
         .columns {
             display: flex;
-            justify-content: space-around;
-            margin-top: 2rem;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 2rem;
         }
         .column {
-            width: 45%;
+            flex-basis: calc(50% - 1rem);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
         }
         .column h3 {
             font-size: 1.5rem;
@@ -157,6 +161,43 @@
         }
         .column li {
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .column li::before {
+            content: '✓';
+            color: #4ade80;
+            margin-right: 0.5rem;
+        }
+        .number-class {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .number-class a {
+            display: inline-flex;
+            align-items: center;
+            background-color: white;
+            color: #4338ca;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .number-class a:hover {
+            background-color: #e2e8f0;
+        }
+        .number-class a::before {
+            content: '📞';
+            margin-right: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+            }
+            .column {
+                flex-basis: 100%;
+            }
         }
     </style>
 </head>
@@ -166,7 +207,7 @@
             <div class="hero-content">
                 <h1>HealthCare Pro</h1>
                 <p>Advanced supplements for a healthier you. Discover the power of science-backed nutrition.</p>
-                <button class="cta-button">Shop Now</button>
+                <button class="cta-button">Explore Now</button>
             </div>
         </section>
         <section class="cards">
@@ -174,21 +215,21 @@
                 <a href="./root.html" class="card">
                 <img src="./doctor-getting-patient-ready-ct-scan.jpg" alt="Doctor examining a patient">
                 <h3>Gpt prompts</h3>
-                <p>Our products are developed by leading healthcare professionals to ensure the highest quality and effectiveness.</p>
+                <p>Chat with an AI doctor using real-time voice communication.</p>
                 </a>
             </div>
             <div class="card">
-                <a href="https://www.example.com/expert-care" class="card">
+                <a href="https://claude.ai/new" class="card">
                 <img src="./doctor-from-future-concept.jpg" alt="Scientists working in a laboratory">
-                <h3>Advanced Research</h3>
-                <p>Cutting-edge formulations backed by scientific studies for optimal health benefits and safety.</p>
+                <h3>Medical Report analysis</h3>
+                <p>Analyze medical reports instantly and get quick responses.</p>
                 </a>
             </div>
             <div class="card">
-                <a href="https://www.example.com/expert-care" class="card">
+                <a href="https://www.perplexity.ai/" class="card">
                 <img src="./doctor-from-future-concept (1).jpg" alt="Natural herbal ingredients">
-                <h3>Natural Ingredients</h3>
-                <p>Pure, high-quality components sourced from nature to support your body's natural processes.</p>
+                <h3>Medical report analysis</h3>
+                <p>Using natural, high-quality ingredients to support your health naturally.</p>
                 </a>
             </div>
         </section>
@@ -221,14 +262,6 @@
             <p>Advanced supplements for a healthier you. Discover the power of science-backed nutrition.</p>
             <div class="columns">
                 <div class="column">
-                    <h3>Humanity</h3>
-                    <ul>
-                        <li>Improving global health</li>
-                        <li>Enhancing quality of life</li>
-                        <li>Promoting wellness education</li>
-                    </ul>
-                </div>
-                <div class="column">
                     <h3>Business</h3>
                     <ul>
                         <li>Sustainable practices</li>
@@ -236,8 +269,20 @@
                         <li>Ethical partnerships</li>
                     </ul>
                 </div>
+                <div class="column">
+                    <h3>Humanity</h3>
+                    <ul>
+                        <li>Improving global health</li>
+                        <li>Enhancing quality of life</li>
+                        <li>Promoting wellness education</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="number-class">
+                <a href="tel:+923465444626">+923465444626</a>
             </div>
             </div>
+       
         </section>
     </div>
 </body>
